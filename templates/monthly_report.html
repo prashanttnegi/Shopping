@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        Monthly order for user {{email}}:
+        <br>
+        <br>
+        {% if orders|length>0%}
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Total</th>
+                </tr>
+                {% for order in orders %}
+                <strong>Order No.: {{orders.index(order)+1}} Date: {{order[0].date.strftime('%d-%m-%Y')}} Total: {{total[orders.index(order)]}}</strong>
+                    {% for item in order%}
+                    <tr>
+                        <td>{{item.product_name}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.rate}}</td>
+                        <td>{{item.total}}</td>
+                    </tr>
+                    {%endfor%}
+                {%endfor%}
+            </table>
+        {%else%}
+            No orders last month.
+        {%endif%}
+    </body>
+</html>
