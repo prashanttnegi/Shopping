@@ -12,6 +12,6 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     WTF_CSRF_ENABLED = False
     SECURITY_TOKEN_AUTHENTICATION_HEADER = 'Authentication-Token'
-    CACHE_REDIS_HOST="redis://red-crhh9m56l47c73c90ih0"
+    CACHE_REDIS_HOST="REDIS_URL=redis://red-crhh9m56l47c73c90ih0.redis.render.com"
     CACHE_REDIS_PORT=6379
     CACHE_REDIS_DB=0
